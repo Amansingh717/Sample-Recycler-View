@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">BootcampLayoutsPart2</string>
+    <string name="simple_recycler_view">Simple Recycler View</string>
 </resources>
