@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">BootcampLayoutsPart2</string>
     <string name="simple_recycler_view">Simple Recycler View</string>
+    <string name="staggered_recycler">Staggered Recycler</string>
+    <string name="simple_recycler_with_multi_type">Simple Recycler with multi type</string>
+    <string name="simple_recycler_with_pagination">Simple Recycler with pagination</string>
+    <string name="simple_recycler">Simple Recycler</string>
+    <string name="staggered_recycler_view">Staggered Recycler View</string>
 </resources>

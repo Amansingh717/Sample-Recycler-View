@@ -1,12 +1,14 @@
-package com.example.bootcamplayoutspart2;
+package com.example.bootcamplayoutspart2.simplerecyclerwithpagination;
+
+import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.os.Bundle;
+import com.example.bootcamplayoutspart2.R;
 
-public class MainActivity extends AppCompatActivity {
+public class SimpleRecyclerWithPaginationActivity extends AppCompatActivity {
 
     private DataSource mDataSource;
     private RecyclerView mRecyclerView;
@@ -16,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_simple_recycler);
 
         //initialisation
         mDataSource = new DataSource();

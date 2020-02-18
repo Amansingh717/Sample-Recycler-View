@@ -1,4 +1,4 @@
-package com.example.bootcamplayoutspart2;
+package com.example.bootcamplayoutspart2.simplerecyclerwithmultitype;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,6 +7,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.bootcamplayoutspart2.R;
 
 import java.util.ArrayList;
 
@@ -21,7 +23,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     @NonNull
     @Override
     public MyRecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycler_row_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.simple_recycler_row_item, parent, false);
         return new MyRecyclerViewHolder(view);
     }
 
