@@ -1,17 +1,19 @@
 package com.example.bootcamplayoutspart2;
 
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.os.Bundle;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private DataSource mDataSource;
-    private RecyclerView mRecyclerView;
-    private MyRecyclerViewAdapter myRecyclerViewAdapter;
-    private LinearLayoutManager layoutManager;
+    MyRecyclerViewAdapter myRecyclerViewAdapter = new MyRecyclerViewAdapter();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,17 +21,38 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //initialisation
-        mDataSource = new DataSource();
-        mRecyclerView = findViewById(R.id.recycler_view);
-        myRecyclerViewAdapter = new MyRecyclerViewAdapter();
-        layoutManager = new LinearLayoutManager(this);
+        final DataSource mDataSource = new DataSource();
+        RecyclerView mRecyclerView = findViewById(R.id.recycler_view);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
 
         //fetching data
-        myRecyclerViewAdapter.addData(mDataSource.getData());
+        mDataSource.arrayListLiveData.observe(this, new Observer<ArrayList<DataSource.Data>>() {
+            @Override
+            public void onChanged(ArrayList<DataSource.Data> data) {
+                myRecyclerViewAdapter.submitList(data);
+            }
+        });
+
 
         //setting recycler-view
         mRecyclerView.setAdapter(myRecyclerViewAdapter);
         mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.setHasFixedSize(false);
+
+        Button buttonFetchData = findViewById(R.id.button_fetch_data);
+        buttonFetchData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mDataSource.fetchData();
+            }
+        });
+
+        Button buttonInitData = findViewById(R.id.button_init_data);
+        buttonInitData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mDataSource.initData();
+            }
+        });
     }
 }
