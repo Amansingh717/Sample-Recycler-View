@@ -10,21 +10,16 @@ import com.example.bootcamplayoutspart2.R;
 
 public class SimpleRecyclerActivity extends AppCompatActivity {
 
-    private DataSource mDataSource;
-    private RecyclerView mRecyclerView;
-    private MyRecyclerViewAdapter myRecyclerViewAdapter;
-    private LinearLayoutManager layoutManager;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_simple_recycler);
 
         //initialisation
-        mDataSource = new DataSource();
-        mRecyclerView = findViewById(R.id.recycler_view);
-        myRecyclerViewAdapter = new MyRecyclerViewAdapter();
-        layoutManager = new LinearLayoutManager(this);
+        DataSource mDataSource = new DataSource();
+        RecyclerView mRecyclerView = findViewById(R.id.recycler_view);
+        MyRecyclerViewAdapter myRecyclerViewAdapter = new MyRecyclerViewAdapter();
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
 
         //fetching data
         myRecyclerViewAdapter.addData(mDataSource.getData());

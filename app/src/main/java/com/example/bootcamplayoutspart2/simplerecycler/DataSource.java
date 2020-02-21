@@ -2,7 +2,10 @@ package com.example.bootcamplayoutspart2.simplerecycler;
 
 import java.util.ArrayList;
 
-public class DataSource {
+/**
+ * Data source is used to get a list of 20 items with random double type values
+ */
+class DataSource {
 
     private ArrayList<Double> arrayList;
 
@@ -10,7 +13,7 @@ public class DataSource {
         this.arrayList = new ArrayList<>();
     }
 
-    public ArrayList<Double> getData() {
+    ArrayList<Double> getData() {
         for (int i = 0; i < 20; i++) {
             arrayList.add(Math.random());
         }
