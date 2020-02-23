@@ -19,10 +19,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".simplerecycler.SimpleRecyclerActivity" />
-        <activity android:name=".simplerecyclerwithpagination.SimpleRecyclerWithPaginationActivity" />
-        <activity android:name=".simplerecyclerwithmultitype.SimpleRecyclerWithMultiTypeActivity" />
-        <activity android:name=".staggeredrecycler.StaggeredRecyclerActivity" />
+        <activity
+            android:name=".simplerecycler.SimpleRecyclerActivity"
+            android:label="Simple-type Example"
+            android:parentActivityName=".HomeActivity" />
+        <activity
+            android:name=".simplerecyclerwithpagination.SimpleRecyclerWithPaginationActivity"
+            android:label="Pagination Example"
+            android:parentActivityName=".HomeActivity" />
+        <activity
+            android:name=".simplerecyclerwithmultitype.SimpleRecyclerWithMultiTypeActivity"
+            android:label="Multi-type Example"
+            android:parentActivityName=".HomeActivity" />
+        <activity
+            android:name=".staggeredrecycler.StaggeredRecyclerActivity"
+            android:label="Staggered-type Example"
+            android:parentActivityName=".HomeActivity" />
     </application>
 
 </manifest>

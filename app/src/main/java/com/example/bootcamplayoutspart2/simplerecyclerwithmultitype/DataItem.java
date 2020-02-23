@@ -4,29 +4,29 @@ package com.example.bootcamplayoutspart2.simplerecyclerwithmultitype;
  * Represents one item in a multi-view type recycler-view
  */
 public class DataItem {
-    public static final int ITEM_TYPE_IMAGE_WITH_DESCRIPTION = 0;
-    public static final int ITEM_TYPE_IMAGE = 1;
-    public static final int ITEM_TYPE_DESCRIPTION = 2;
+    public static final int ITEM_TYPE_0 = 0;
+    public static final int ITEM_TYPE_1 = 1;
+    public static final int ITEM_TYPE_2 = 2;
 
     private int itemType;
-    private String textImageUrl;
-    private String textDescription;
+    private int itemImage;
+    private String itemText;
 
-    public DataItem(int itemType, String textImageUrl, String textDescription) {
+    DataItem(int itemType, int itemImage, String itemText) {
         this.itemType = itemType;
-        this.textImageUrl = textImageUrl;
-        this.textDescription = textDescription;
+        this.itemImage = itemImage;
+        this.itemText = itemText;
     }
 
-    public int getItemType() {
+    int getItemType() {
         return itemType;
     }
 
-    public String getTextImageUrl() {
-        return textImageUrl;
+    int getItemImage() {
+        return itemImage;
     }
 
-    public String getTextDescription() {
-        return textDescription;
+    String getItemText() {
+        return itemText;
     }
 }

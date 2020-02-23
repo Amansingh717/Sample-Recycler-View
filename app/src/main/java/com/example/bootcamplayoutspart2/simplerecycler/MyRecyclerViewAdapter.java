@@ -31,6 +31,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     @Override
     public void onBindViewHolder(@NonNull final MyRecyclerViewHolder holder, final int position) {
         holder.textView.setText(String.valueOf(arrayList.get(position)));
+        holder.textViewIndex.setText(String.valueOf(position));
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,10 +47,12 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
 
     class MyRecyclerViewHolder extends RecyclerView.ViewHolder {
         TextView textView;
+        TextView textViewIndex;
 
         MyRecyclerViewHolder(@NonNull View itemView) {
             super(itemView);
             textView = itemView.findViewById(R.id.row_item_text);
+            textViewIndex = itemView.findViewById(R.id.row_item_index);
         }
     }
 }
