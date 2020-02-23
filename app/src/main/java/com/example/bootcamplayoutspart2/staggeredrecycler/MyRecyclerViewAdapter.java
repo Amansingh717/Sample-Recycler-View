@@ -8,16 +8,15 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
 import com.example.bootcamplayoutspart2.R;
 
 import java.util.ArrayList;
 
 public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAdapter.MyRecyclerViewHolder> {
 
-    private ArrayList<String> arrayList = new ArrayList<>();
+    private ArrayList<Integer> arrayList = new ArrayList<>();
 
-    void addData(ArrayList<String> arrayList) {
+    void addData(ArrayList<Integer> arrayList) {
         this.arrayList.addAll(arrayList);
     }
 
@@ -30,9 +29,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
 
     @Override
     public void onBindViewHolder(@NonNull MyRecyclerViewHolder holder, int position) {
-        Glide.with(holder.itemView.getContext())
-                .load(arrayList.get(position))
-                .into(holder.imageView);
+        holder.imageView.setImageResource(arrayList.get(position));
     }
 
     @Override
