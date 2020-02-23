@@ -1,6 +1,7 @@
 package com.example.bootcamplayoutspart2.simplerecyclerwithpagination;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.widget.AbsListView;
 import android.widget.Toast;
 
@@ -14,6 +15,8 @@ import com.example.bootcamplayoutspart2.R;
 public class SimpleRecyclerWithPaginationActivity extends AppCompatActivity {
 
     LinearLayoutManager layoutManager;
+    DataSource mDataSource;
+    MyRecyclerViewAdapter myRecyclerViewAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,9 +24,9 @@ public class SimpleRecyclerWithPaginationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_simple_recycler);
 
         //initialisation
-        DataSource mDataSource = new DataSource();
+        mDataSource = new DataSource();
         RecyclerView mRecyclerView = findViewById(R.id.recycler_view);
-        MyRecyclerViewAdapter myRecyclerViewAdapter = new MyRecyclerViewAdapter();
+        myRecyclerViewAdapter = new MyRecyclerViewAdapter();
         layoutManager = new LinearLayoutManager(this);
 
         //fetching data
@@ -57,8 +60,17 @@ public class SimpleRecyclerWithPaginationActivity extends AppCompatActivity {
             if (isScrolling && visibleItems + scrolledOutItems == totalItems) {
                 Toast.makeText(SimpleRecyclerWithPaginationActivity.this, "Loading more data...", Toast.LENGTH_SHORT).show();
                 isScrolling = false;
+                fetchAndAddMoreData();
             }
-
         }
     };
+
+    private void fetchAndAddMoreData() {
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                myRecyclerViewAdapter.addPaginatedData(mDataSource.getData());
+            }
+        }, 1500);
+    }
 }

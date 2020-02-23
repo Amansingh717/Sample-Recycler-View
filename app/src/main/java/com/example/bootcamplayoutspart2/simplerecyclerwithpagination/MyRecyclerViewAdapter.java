@@ -20,6 +20,11 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
         this.arrayList.addAll(arrayList);
     }
 
+    void addPaginatedData(ArrayList<Double> paginatedArrayList) {
+        this.arrayList.addAll(paginatedArrayList);
+        this.notifyDataSetChanged();
+    }
+
     @NonNull
     @Override
     public MyRecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -30,6 +35,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     @Override
     public void onBindViewHolder(@NonNull MyRecyclerViewHolder holder, int position) {
         holder.textView.setText(String.valueOf(arrayList.get(position)));
+        holder.textViewIndex.setText(String.valueOf(position));
     }
 
     @Override
@@ -39,10 +45,12 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
 
     class MyRecyclerViewHolder extends RecyclerView.ViewHolder {
         TextView textView;
+        TextView textViewIndex;
 
         MyRecyclerViewHolder(@NonNull View itemView) {
             super(itemView);
             textView = itemView.findViewById(R.id.row_item_text);
+            textViewIndex = itemView.findViewById(R.id.row_item_index);
         }
     }
 }

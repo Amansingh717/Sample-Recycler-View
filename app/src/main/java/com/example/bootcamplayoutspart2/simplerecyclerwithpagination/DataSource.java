@@ -11,6 +11,7 @@ class DataSource {
     }
 
     ArrayList<Double> getData() {
+        arrayList.clear();
         for (int i = 0; i < 20; i++) {
             arrayList.add(Math.random());
         }
