@@ -1,14 +1,15 @@
-package com.example.bootcamplayoutspart2.simplerecyclerwithpagination;
+package com.example.samplerecyclerview.simplerecycler;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.bootcamplayoutspart2.R;
+import com.example.samplerecyclerview.R;
 
 import java.util.ArrayList;
 
@@ -20,11 +21,6 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
         this.arrayList.addAll(arrayList);
     }
 
-    void addPaginatedData(ArrayList<Double> paginatedArrayList) {
-        this.arrayList.addAll(paginatedArrayList);
-        this.notifyDataSetChanged();
-    }
-
     @NonNull
     @Override
     public MyRecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -33,9 +29,15 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyRecyclerViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final MyRecyclerViewHolder holder, final int position) {
         holder.textView.setText(String.valueOf(arrayList.get(position)));
         holder.textViewIndex.setText(String.valueOf(position));
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(holder.itemView.getContext(), "You clicked item with value " + arrayList.get(position), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.example.bootcamplayoutspart2;
+package com.example.samplerecyclerview;
 
 import org.junit.Test;
 

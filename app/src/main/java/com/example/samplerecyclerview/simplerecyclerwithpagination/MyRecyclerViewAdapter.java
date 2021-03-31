@@ -1,35 +1,41 @@
-package com.example.bootcamplayoutspart2.staggeredrecycler;
+package com.example.samplerecyclerview.simplerecyclerwithpagination;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.bootcamplayoutspart2.R;
+import com.example.samplerecyclerview.R;
 
 import java.util.ArrayList;
 
 public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAdapter.MyRecyclerViewHolder> {
 
-    private ArrayList<Integer> arrayList = new ArrayList<>();
+    private ArrayList<Double> arrayList = new ArrayList<>();
 
-    void addData(ArrayList<Integer> arrayList) {
+    void addData(ArrayList<Double> arrayList) {
         this.arrayList.addAll(arrayList);
+    }
+
+    void addPaginatedData(ArrayList<Double> paginatedArrayList) {
+        this.arrayList.addAll(paginatedArrayList);
+        this.notifyDataSetChanged();
     }
 
     @NonNull
     @Override
     public MyRecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.staggered_recycler_row_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.simple_recycler_row_item, parent, false);
         return new MyRecyclerViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyRecyclerViewHolder holder, int position) {
-        holder.imageView.setImageResource(arrayList.get(position));
+        holder.textView.setText(String.valueOf(arrayList.get(position)));
+        holder.textViewIndex.setText(String.valueOf(position));
     }
 
     @Override
@@ -38,11 +44,13 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     }
 
     class MyRecyclerViewHolder extends RecyclerView.ViewHolder {
-        ImageView imageView;
+        TextView textView;
+        TextView textViewIndex;
 
         MyRecyclerViewHolder(@NonNull View itemView) {
             super(itemView);
-            imageView = itemView.findViewById(R.id.row_item_image_staggered);
+            textView = itemView.findViewById(R.id.row_item_text);
+            textViewIndex = itemView.findViewById(R.id.row_item_index);
         }
     }
 }

@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name='BootcampLayoutsPart2'
+rootProject.name='SampleRecyclerView'

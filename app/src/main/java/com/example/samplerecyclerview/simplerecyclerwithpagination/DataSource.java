@@ -1,4 +1,4 @@
-package com.example.bootcamplayoutspart2.simplerecyclerwithpagination;
+package com.example.samplerecyclerview.simplerecyclerwithpagination;
 
 import java.util.ArrayList;
 

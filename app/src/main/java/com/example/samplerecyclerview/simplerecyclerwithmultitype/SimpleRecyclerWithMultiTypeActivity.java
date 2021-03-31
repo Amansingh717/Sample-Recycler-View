@@ -1,4 +1,4 @@
-package com.example.bootcamplayoutspart2.simplerecyclerwithmultitype;
+package com.example.samplerecyclerview.simplerecyclerwithmultitype;
 
 import android.os.Bundle;
 
@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.bootcamplayoutspart2.R;
+import com.example.samplerecyclerview.R;
 
 public class SimpleRecyclerWithMultiTypeActivity extends AppCompatActivity {
 

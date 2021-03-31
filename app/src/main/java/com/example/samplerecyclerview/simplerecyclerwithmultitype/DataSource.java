@@ -1,6 +1,6 @@
-package com.example.bootcamplayoutspart2.simplerecyclerwithmultitype;
+package com.example.samplerecyclerview.simplerecyclerwithmultitype;
 
-import com.example.bootcamplayoutspart2.R;
+import com.example.samplerecyclerview.R;
 
 import java.util.ArrayList;
 

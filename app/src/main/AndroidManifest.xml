@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.bootcamplayoutspart2">
+    package="com.example.samplerecyclerview">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".HomeActivity">
+        <activity android:name="com.example.samplerecyclerview.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,21 +20,21 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".simplerecycler.SimpleRecyclerActivity"
+            android:name="com.example.samplerecyclerview.simplerecycler.SimpleRecyclerActivity"
             android:label="Simple-type Example"
-            android:parentActivityName=".HomeActivity" />
+            android:parentActivityName="com.example.samplerecyclerview.HomeActivity" />
         <activity
-            android:name=".simplerecyclerwithpagination.SimpleRecyclerWithPaginationActivity"
+            android:name="com.example.samplerecyclerview.simplerecyclerwithpagination.SimpleRecyclerWithPaginationActivity"
             android:label="Pagination Example"
-            android:parentActivityName=".HomeActivity" />
+            android:parentActivityName="com.example.samplerecyclerview.HomeActivity" />
         <activity
-            android:name=".simplerecyclerwithmultitype.SimpleRecyclerWithMultiTypeActivity"
+            android:name="com.example.samplerecyclerview.simplerecyclerwithmultitype.SimpleRecyclerWithMultiTypeActivity"
             android:label="Multi-type Example"
-            android:parentActivityName=".HomeActivity" />
+            android:parentActivityName="com.example.samplerecyclerview.HomeActivity" />
         <activity
-            android:name=".staggeredrecycler.StaggeredRecyclerActivity"
+            android:name="com.example.samplerecyclerview.staggeredrecycler.StaggeredRecyclerActivity"
             android:label="Staggered-type Example"
-            android:parentActivityName=".HomeActivity" />
+            android:parentActivityName="com.example.samplerecyclerview.HomeActivity" />
     </application>
 
 </manifest>

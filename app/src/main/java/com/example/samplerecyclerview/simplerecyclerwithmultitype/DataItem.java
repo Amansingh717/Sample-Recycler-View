@@ -1,4 +1,4 @@
-package com.example.bootcamplayoutspart2.simplerecyclerwithmultitype;
+package com.example.samplerecyclerview.simplerecyclerwithmultitype;
 
 /**
  * Represents one item in a multi-view type recycler-view

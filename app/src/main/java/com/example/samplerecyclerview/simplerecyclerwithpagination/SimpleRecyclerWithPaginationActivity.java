@@ -1,4 +1,4 @@
-package com.example.bootcamplayoutspart2.simplerecyclerwithpagination;
+package com.example.samplerecyclerview.simplerecyclerwithpagination;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.bootcamplayoutspart2.R;
+import com.example.samplerecyclerview.R;
 
 public class SimpleRecyclerWithPaginationActivity extends AppCompatActivity {
 

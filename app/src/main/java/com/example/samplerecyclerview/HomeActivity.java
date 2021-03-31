@@ -1,4 +1,4 @@
-package com.example.bootcamplayoutspart2;
+package com.example.samplerecyclerview;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,10 +7,10 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.bootcamplayoutspart2.simplerecycler.SimpleRecyclerActivity;
-import com.example.bootcamplayoutspart2.simplerecyclerwithmultitype.SimpleRecyclerWithMultiTypeActivity;
-import com.example.bootcamplayoutspart2.simplerecyclerwithpagination.SimpleRecyclerWithPaginationActivity;
-import com.example.bootcamplayoutspart2.staggeredrecycler.StaggeredRecyclerActivity;
+import com.example.samplerecyclerview.simplerecycler.SimpleRecyclerActivity;
+import com.example.samplerecyclerview.simplerecyclerwithmultitype.SimpleRecyclerWithMultiTypeActivity;
+import com.example.samplerecyclerview.simplerecyclerwithpagination.SimpleRecyclerWithPaginationActivity;
+import com.example.samplerecyclerview.staggeredrecycler.StaggeredRecyclerActivity;
 
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
 

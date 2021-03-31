@@ -1,14 +1,15 @@
-package com.example.bootcamplayoutspart2.simplerecycler;
+package com.example.samplerecyclerview.staggeredrecycler;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
-import com.example.bootcamplayoutspart2.R;
+import com.example.samplerecyclerview.R;
 
-public class SimpleRecyclerActivity extends AppCompatActivity {
+public class StaggeredRecyclerActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +20,7 @@ public class SimpleRecyclerActivity extends AppCompatActivity {
         DataSource mDataSource = new DataSource();
         RecyclerView mRecyclerView = findViewById(R.id.recycler_view);
         MyRecyclerViewAdapter myRecyclerViewAdapter = new MyRecyclerViewAdapter();
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL);
 
         //fetching data
         myRecyclerViewAdapter.addData(mDataSource.getData());
@@ -27,6 +28,5 @@ public class SimpleRecyclerActivity extends AppCompatActivity {
         //setting recycler-view
         mRecyclerView.setAdapter(myRecyclerViewAdapter);
         mRecyclerView.setLayoutManager(layoutManager);
-        mRecyclerView.setHasFixedSize(false);
     }
 }

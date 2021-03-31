@@ -1,6 +1,6 @@
-package com.example.bootcamplayoutspart2.staggeredrecycler;
+package com.example.samplerecyclerview.staggeredrecycler;
 
-import com.example.bootcamplayoutspart2.R;
+import com.example.samplerecyclerview.R;
 
 import java.util.ArrayList;
 

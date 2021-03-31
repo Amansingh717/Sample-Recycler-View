@@ -1,4 +1,4 @@
-package com.example.bootcamplayoutspart2.simplerecyclerwithmultitype;
+package com.example.samplerecyclerview.simplerecyclerwithmultitype;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,7 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.bootcamplayoutspart2.R;
+import com.example.samplerecyclerview.R;
 
 import java.util.ArrayList;
 
